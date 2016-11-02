@@ -14,8 +14,12 @@ The embedded Ruby here is pulling the name attribute the pokemon variable being 
 The text "Throw a Pokeball!" is the value of the input tag created by this code. The capture_path(id: @pokemon) section calls the method capture_path, passing in the @pokemon variable. "button medium" handles what classes will be assigned to the input tag. :method defines what HTTP verb will be used along with the path.
 
 # Question 3: What would you name your own Pokemon?
+Sparks
 
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
+I used 
+redirect_to '/trainers/'+@trainer_id
+I passed in the param of the trainer_id from the trainer's page when you click the button. Combining that and /trainers/ creates a usable path that is different from trainer to trainer.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 
