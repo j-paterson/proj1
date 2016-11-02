@@ -1,6 +1,10 @@
 # Q0: Why is this error being thrown?
+The HomeController is trying to access an attribute in the Pokemon Model that does not exist.
 
 # Q1: How are the random Pokemon appearing? What is the common factor between all the possible Pokemon that appear? *
+In index.html.erb, there is the line:
+A wild <%= @pokemon.name %> has appeared!
+The embedded Ruby here is pulling the name attribute the pokemon variable being sent to the page from the home_controller def index. This variable is from a sample of the 'trainerless_pokemon,' a data set comprised of the starter pokemon generated from the seeds.rb.
 
 # Question 2a: What does the following line do "<%= button_to "Throw a Pokeball!", capture_path(id: @pokemon), :class => "button medium", :method => :patch %>"? Be specific about what "capture_path(id: @pokemon)" is doing. If you're having trouble, look at the Help section in the README.
 
