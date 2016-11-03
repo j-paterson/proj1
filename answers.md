@@ -22,6 +22,8 @@ redirect_to '/trainers/'+@trainer_id
 I passed in the param of the trainer_id from the trainer's page when you click the button. Combining that and /trainers/ creates a usable path that is different from trainer to trainer.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
+Flashes are name/value hash pairs. (It persists across 2 requests) This line access the error parameter of the flash and sets it equal to the pokemon errors in full sentences.
+
 
 # Give us feedback on the project and decal below!
 

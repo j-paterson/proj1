@@ -1,0 +1,4 @@
+<%= simple_form_for @new_pokemon, path: "/pokemons/create" do |f| %>
+  <%= f.input :name, error: @error %>
+  <%= f.button :submit %>
+<% end %>

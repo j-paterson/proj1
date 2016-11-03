@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  patch 'capture', to: 'pokemon#capture'
-  patch 'damage', to: 'pokemon#damage'
+  patch 'capture', to: 'pokemons#capture'
+  patch 'damage', to: 'pokemons#damage'
   devise_for :trainers
   resources :trainers
-  resources :pokemon
+  resources :pokemons
 end
