@@ -11,3 +11,7 @@
 </li>
 </ul>
 <% end -%>
+<% if @trainer.id==current_trainer.id %>    
+	<%= button_to "Create New!", new_pokemon_path, :class => "button medium", :method => :get %>
+<% end -%>
+

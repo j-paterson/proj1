@@ -21,7 +21,12 @@ class PokemonsController < ApplicationController
 	end
 	def create
 		@input_name = params[:pokemon][:name]
-		Pokemon.create name: @input_name, level: 1, health: 100, trainer_id: current_trainer.id
-		redirect_to '/trainers/'+current_trainer.id.to_s
+		new_pokemon=Pokemon.new(name: @input_name, level: 1, health: 100)
+		if new_pokemon.valid?
+			Pokemon.create(name: @input_name, level: 1, health: 100, trainer_id: current_trainer.id)
+			redirect_to '/trainers/'+current_trainer.id.to_s
+		else
+			redirect_to(new_pokemon_path, {:flash => { :error => "Pokemon must have a unique name!" }})
+		end
 	end
 end
